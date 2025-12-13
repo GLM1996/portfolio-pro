@@ -153,7 +153,7 @@ export default function Skills() {
                   <div className="mt-6 pt-6 border-t border-white/10">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-400">Experiencia comprobada</span>
-                      <span className="text-cyan-300 font-medium">+3 años</span>
+                      <span className="text-cyan-300 font-medium">+2 años</span>
                     </div>
                   </div>
                 </div>

@@ -41,7 +41,7 @@ export default function About() {
           
           <div className="relative bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl">
             <p className="text-gray-200 text-xl leading-relaxed md:text-xl/relaxed">
-              Desarrollador <span className="font-semibold text-cyan-300">Full Stack</span> con más de 3 años de experiencia en arquitecturas modernas. 
+              Desarrollador <span className="font-semibold text-cyan-300">Full Stack</span> con más de 2 años de experiencia en arquitecturas modernas. 
               Especializado en construir aplicaciones escalables con <span className="font-semibold text-purple-300">React</span> y 
               <span className="font-semibold text-purple-300"> Node.js</span>, e implementando sistemas de integración mediante 
               <span className="font-semibold text-cyan-300"> n8n</span> para automatizar flujos de trabajo y conectar ecosistemas SaaS.
@@ -62,7 +62,7 @@ export default function About() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           {[
-            { value: "+3", label: "Años de experiencia", sublabel: "Full Stack Development" },
+            { value: "+2", label: "Años de experiencia", sublabel: "Full Stack Development" },
             { value: "+20", label: "Proyectos completados", sublabel: "Clientes satisfechos" },
             { value: "Integraciones", label: "Especialización", sublabel: "APIs & Automatización" }
           ].map((item, index) => (
@@ -86,24 +86,7 @@ export default function About() {
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-          className="mt-12 text-center"
-        >
-          <div className="inline-flex items-center gap-4 text-gray-400 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span>Disponible para proyectos</span>
-            </div>
-            <span>•</span>
-            <span>Especializado en soluciones B2B</span>
-            <span>•</span>
-            <span>Enfoque en ROI técnico</span>
-          </div>
-        </motion.div>
+        
       </motion.div>
     </section>
   );

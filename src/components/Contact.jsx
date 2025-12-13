@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { 
-  Mail, 
-  Github, 
-  Linkedin, 
-  MessageSquare, 
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MessageSquare,
   Send,
   MapPin,
   Phone,
   Clock,
   CheckCircle,
-  Zap
+  Zap,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -66,6 +66,18 @@ const contactInfo = [
     title: "Respuesta",
     value: "≤ 24 horas",
     description: "Tiempo máximo de respuesta"
+  },
+  {
+    icon: Phone,
+    title: "Teléfono",
+    value: "+53 63835738",
+    description: "Siempre atento a nuestro clientes"
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "estrellaglm96@gmail.com",
+    description: "Siempre atento a nuestro clientes"
   }
 ];
 
@@ -81,13 +93,13 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulación de envío
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      
+
       // Resetear mensaje después de 5 segundos
       setTimeout(() => setIsSubmitted(false), 5000);
     }, 1500);
@@ -101,8 +113,8 @@ export default function Contact() {
   };
 
   return (
-    <section 
-      id="contacto" 
+    <section
+      id="contacto"
       className="relative py-28 px-6 bg-gradient-to-b from-[#0B0016] to-[#1a0030] overflow-hidden"
     >
       {/* Elementos decorativos de fondo */}
@@ -125,11 +137,11 @@ export default function Contact() {
             <MessageSquare className="w-4 h-4 text-cyan-400" />
             <span className="text-sm text-gray-300 tracking-wider">CONTACTO</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Trabajemos <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Juntos</span>
           </h2>
-          
+
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             ¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a llevarlo al siguiente nivel
           </p>
@@ -145,8 +157,8 @@ export default function Contact() {
             className="relative"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 rounded-2xl blur" />
-            
-            <div className="relative bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+
+            <div className="h-full bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               {isSubmitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -164,9 +176,9 @@ export default function Contact() {
               ) : (
                 <>
                   <h3 className="text-2xl font-bold text-white mb-6">Envíame un mensaje</h3>
-                  
+
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           Nombre
@@ -183,7 +195,7 @@ export default function Contact() {
                           />
                         </div>
                       </div>
-                      
+
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           Email
@@ -202,7 +214,7 @@ export default function Contact() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Mensaje
@@ -217,16 +229,16 @@ export default function Contact() {
                         placeholder="Describe tu proyecto, objetivos o cualquier consulta que tengas..."
                       />
                     </div>
-                    
+
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`w-full py-4 rounded-xl font-medium text-lg transition-all ${isSubmitting 
-                        ? 'bg-gray-700 cursor-not-allowed' 
+                      className={`w-full py-4 rounded-xl font-medium text-lg transition-all ${isSubmitting
+                        ? 'bg-gray-700 cursor-not-allowed'
                         : 'bg-gradient-to-r from-purple-600 to-cyan-600 hover:shadow-xl hover:shadow-purple-500/25'
-                      }`}
+                        }`}
                     >
                       <span className="flex items-center justify-center gap-3 text-white">
                         {isSubmitting ? (
@@ -256,10 +268,11 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
+            
             {/* Información de contacto */}
             <div className="bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Información de contacto</h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((item, index) => (
                   <motion.div
@@ -283,7 +296,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Redes sociales mejoradas */}
+            {/* Redes sociales mejoradas
             <div className="bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Conéctate conmigo</h3>
               
@@ -314,28 +327,27 @@ export default function Contact() {
                   </motion.a>
                 ))}
               </div>
-            </div>
-
-            {/* Nota adicional */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="p-6 rounded-xl bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-white/10"
-            >
-              <div className="flex items-start gap-3">
-                <Zap className="w-5 h-5 text-yellow-400 mt-0.5" />
-                <div>
-                  <p className="text-gray-300 text-sm">
-                    <span className="font-semibold">Respuesta rápida garantizada:</span> 
-                    Normalmente respondo dentro de las primeras 2 horas durante días laborables.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+            </div> */}
           </motion.div>
         </div>
+        {/* Nota adicional */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-2 p-6 rounded-xl bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-white/10"
+        >
+          <div className="flex items-start gap-3">
+            <Zap className="w-5 h-5 text-yellow-400 mt-0.5" />
+            <div>
+              <p className="text-gray-300 text-sm">
+                <span className="font-semibold">Respuesta rápida garantizada:</span>
+                Normalmente respondo dentro de las primeras 2 horas durante días laborables.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

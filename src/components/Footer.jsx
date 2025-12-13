@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  MessageSquare, 
+import {
+  Github,
+  Linkedin,
+  MessageSquare,
   Mail,
   Code2,
   Heart,
   Coffee,
   Zap,
-  ExternalLink
+  ExternalLink,
+  SquareChevronUp
 } from "lucide-react";
 
 const footerLinks = [
@@ -35,9 +36,7 @@ const footerLinks = [
   {
     title: "Recursos",
     links: [
-      { label: "Blog", href: "#" },
       { label: "Casos de Estudio", href: "#proyectos" },
-      { label: "Documentación", href: "#" },
       { label: "Política de Privacidad", href: "#" },
       { label: "Términos de Servicio", href: "#" }
     ]
@@ -76,7 +75,7 @@ const techStack = [
   { name: "Next.js", color: "text-gray-300" },
   { name: "Tailwind CSS", color: "text-teal-400" },
   { name: "Node.js", color: "text-green-400" },
-  { name: "TypeScript", color: "text-blue-400" },
+  { name: "JavaScript", color: "text-blue-400" },
   { name: "Framer Motion", color: "text-purple-400" }
 ];
 
@@ -118,12 +117,12 @@ export default function Footer() {
                 <p className="text-sm text-gray-400 tracking-wider mt-1">FULL STACK DEVELOPER</p>
               </div>
             </motion.div>
-            
+
             <p className="text-gray-400 mb-6 max-w-md">
-              Especialista en desarrollo web moderno, automatizaciones SaaS e integraciones inteligentes. 
+              Especialista en desarrollo web moderno, automatizaciones e integraciones inteligentes.
               Transformo ideas en soluciones tecnológicas escalables.
             </p>
-            
+
             {/* Tecnologías */}
             <div className="mb-6">
               <p className="text-gray-500 text-sm mb-3">Tecnologías principales:</p>
@@ -177,68 +176,13 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Línea divisoria */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"
-        />
-
-        {/* Redes sociales y CTA */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8">
-          {/* Redes sociales mejoradas */}
-          <div className="flex flex-wrap gap-4">
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
-              >
-                <div className="p-2 rounded-lg bg-gradient-to-r from-purple-500/20 to-cyan-500/20 group-hover:from-purple-500/30 group-hover:to-cyan-500/30">
-                  <social.icon className="w-4 h-4 text-cyan-300" />
-                </div>
-                <div className="text-left">
-                  <p className="text-white text-sm font-medium">{social.label}</p>
-                  <p className="text-gray-400 text-xs">{social.description}</p>
-                </div>
-                <ExternalLink className="w-3 h-3 text-gray-500 ml-2 group-hover:text-cyan-400 transition-colors" />
-              </motion.a>
-            ))}
-          </div>
-
-          {/* CTA para contacto */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="text-center lg:text-right"
-          >
-            <a
-              href="#contacto"
-              className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl text-white font-medium hover:shadow-xl hover:shadow-purple-500/25 transition-all"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>¿Listo para empezar tu proyecto?</span>
-              <Zap className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-            </a>
-          </motion.div>
-        </div>
-
         {/* Copyright y detalles */}
         <div className="text-center pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
             <p className="text-gray-500 text-sm">
               © {currentYear} GustavoDev. Todos los derechos reservados.
             </p>
-            
+
             <div className="flex items-center gap-4 text-gray-500 text-sm">
               <div className="flex items-center gap-2">
                 <Heart className="w-3 h-3 text-red-400" />
@@ -254,14 +198,34 @@ export default function Footer() {
 
           {/* Stack técnico footer */}
           <p className="text-gray-600 text-xs">
-            Construido con React • Next.js • Tailwind CSS • TypeScript • Framer Motion • Vercel
+            • React •  Tailwind CSS • JavaScript • Framer Motion •
           </p>
         </div>
 
-        <div className="flex items-center">
-          <span className="size-4 bg-red-400 rounded-full"></span>
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="flex items-center justify-center mt-2"
+        >
+          <motion.span
+            animate={{
+              scale: [1, 1.2, 1],
+              boxShadow: [
+                "0 0 0 0 rgba(248, 113, 113, 0.7)",
+                "0 0 0 6px rgba(248, 113, 113, 0)",
+                "0 0 0 0 rgba(248, 113, 113, 0)"
+              ]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 1
+            }}
+            className="size-4 bg-red-400 rounded-full"
+          />
           <b className="ms-1 text-gray-400">En desarrollo</b>
-        </div>
+        </motion.div>
 
         {/* Volver arriba */}
         <motion.a
@@ -273,7 +237,7 @@ export default function Footer() {
           className="absolute right-6 top-6 hidden lg:block"
         >
           <div className="p-2 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
-            <Zap className="w-5 h-5 text-gray-400" />
+            <SquareChevronUp className="w-5 h-5 text-gray-400" />
           </div>
         </motion.a>
       </div>

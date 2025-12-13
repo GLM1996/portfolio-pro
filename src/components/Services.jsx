@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { 
-  Code2, 
-  Server, 
-  Workflow, 
-  Zap, 
-  Shield, 
+import {
+  Code2,
+  Server,
+  Workflow,
+  Zap,
+  Shield,
   Rocket,
   Cpu,
   BarChart3,
@@ -18,7 +18,7 @@ const services = [
   {
     icon: Code2,
     title: "Frontend Avanzado",
-    description: "Desarrollo de interfaces modernas con React/Next.js, optimizadas para rendimiento, SEO y experiencia de usuario excepcional.",
+    description: "Desarrollo de interfaces modernas con React/Next.js, optimizadas para rendimiento, SEO.",
     features: [
       "Aplicaciones SPA y SSR",
       "Optimización Core Web Vitals",
@@ -97,8 +97,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section 
-      id="servicios" 
+    <section
+      id="servicios"
       className="relative py-28 px-6 bg-gradient-to-b from-[#0B0016] to-[#15002A] overflow-hidden"
     >
       {/* Elementos decorativos de fondo */}
@@ -121,11 +121,11 @@ export default function Services() {
             <Rocket className="w-4 h-4 text-cyan-400" />
             <span className="text-sm text-gray-300 tracking-wider">SOLUCIONES</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Servicios <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Especializados</span>
           </h2>
-          
+
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Soluciones tecnológicas completas que transforman procesos y optimizan operaciones empresariales
           </p>
@@ -141,13 +141,13 @@ export default function Services() {
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.6, 
+                transition={{
+                  duration: 0.6,
                   delay: service.delay,
                   type: "spring",
                   stiffness: 100
                 }}
-                whileHover={{ 
+                whileHover={{
                   y: -8,
                   transition: { duration: 0.2 }
                 }}
@@ -155,13 +155,13 @@ export default function Services() {
               >
                 {/* Efecto de borde luminoso */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${service.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`} />
-                
+
                 <div className="relative h-full bg-gradient-to-br from-white/5 to-black/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6 overflow-hidden">
                   {/* Fondo de icono decorativo */}
                   <div className="absolute -right-4 -top-4 opacity-10">
                     <IconComponent className="w-32 h-32" />
                   </div>
-                  
+
                   {/* Header del servicio */}
                   <div className="relative flex items-start gap-4 mb-6">
                     <div className={`p-3 rounded-xl bg-gradient-to-r ${service.gradient} bg-opacity-20`}>
@@ -192,34 +192,24 @@ export default function Services() {
                   </div>
 
                   {/* Footer del servicio */}
-                  <div className="pt-6 border-t border-white/10">
-                    <div className="flex items-center justify-between">
+                  <div className="flex items-center pt-6 border-t border-white/10">
+                    <div className="flex w-full items-center justify-between">
                       <span className="text-xs text-gray-400">Implementación personalizada</span>
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="inline-flex items-center gap-1 text-cyan-300 text-sm font-medium cursor-pointer"
-                      >
-                        <span>Explorar</span>
-                        <Zap className="w-3 h-3" />
-                      </motion.div>
-                    </div>
-                  </div>
-
-                  {/* Indicador de popularidad */}
-                  <div className="absolute bottom-4 right-4">
-                    <div className="flex items-center gap-1">
-                      {[...Array(3)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          animate={{ scale: [1, 1.2, 1] }}
-                          transition={{ 
-                            duration: 2, 
-                            repeat: Infinity,
-                            delay: i * 0.3 
-                          }}
-                          className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400"
-                        />
-                      ))}
+                      {/* Indicador de popularidad */}
+                      <div className="flex items-center gap-1">
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              delay: i * 0.3
+                            }}
+                            className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400"
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
