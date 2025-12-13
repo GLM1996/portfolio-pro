@@ -258,6 +258,11 @@ export default function Footer() {
           </p>
         </div>
 
+        <div className="flex items-center">
+          <span className="size-4 bg-red-400 rounded-full"></span>
+          <b className="ms-1 text-gray-400">En desarrollo</b>
+        </div>
+
         {/* Volver arriba */}
         <motion.a
           href="#inicio"
