@@ -91,19 +91,45 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
+    setIsSubmitted(true)
 
-    // Simulación de envío
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+    try {
+      // REEMPLAZA ESTA URL CON TU ENDPOINT DE FORMSPREE
+      const response = await fetch('https://formspree.io/f/myzrvpyz', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          _subject: `Nuevo mensaje de contacto de ${formData.name}`,
+          _replyto: formData.email,
+        }),
+      })
 
-      // Resetear mensaje después de 5 segundos
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
-  };
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', message: '' })
+
+        // Resetear mensaje de éxito después de 5 segundos
+        setTimeout(() => {
+          setIsSubmitted(false)
+        }, 5000)
+      } else {
+        throw new Error('Error en la respuesta')
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      setIsSubmitted('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -268,7 +294,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            
+
             {/* Información de contacto */}
             <div className="bg-gradient-to-br from-white/5 to-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Información de contacto</h3>
