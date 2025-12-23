@@ -32,7 +32,7 @@ const socialLinks = [
   },
   {
     icon: MessageSquare,
-    href: "https://wa.me/123123123",
+    href: "https://wa.me/5363835837",
     label: "WhatsApp",
     description: "Chat directo",
     color: "from-green-700 to-emerald-900",
@@ -70,7 +70,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Teléfono",
-    value: "+53 63835738",
+    value: "+53 63835837",
     description: "Siempre atento a nuestro clientes"
   },
   {
