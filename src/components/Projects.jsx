@@ -64,7 +64,7 @@ const projects = [
     icon: Brain
   },
   {
-    title: "Desarrollador & Automatizador de Sistemas",
+    title: "Landing de Agencia",
     description: "Convierto procesos manuales en soluciones automatizadas. Desarrollo aplicaciones personalizadas e integro sistemas para optimizar tu operación.",
     longDescription: "Especialista en desarrollo de software y automatización de procesos empresariales. Creo aplicaciones a medida e implemento sistemas de integración que conectan tus herramientas existentes, eliminando trabajo repetitivo y optimizando flujos operativos. Mi enfoque: entender tu negocio y desarrollar soluciones técnicas que generen impacto real en productividad y eficiencia.",
     tech: [
@@ -72,7 +72,7 @@ const projects = [
       { name: "Tailwind CSS", icon: Sparkles, color: "bg-blue-500/20 text-blue-300" },
       { name: "JavaScript", icon: Brackets, color: "bg-yellow-500/20 text-yellow-300" }
     ],
-    demo: "https://gl-automations.vercel.app",
+    demo: "https://developer-gl.vercel.app",
     repo: "#",
     status: "Demo",
     //metrics: "95% precisión",
@@ -123,7 +123,7 @@ const projects = [
     ],
     demo: "https://tiendadalygus.vercel.app/",
     repo: "#",
-    status: "Demo Disponible",
+    status: "Demo",
     gradient: "from-emerald-500/20 to-teal-500/20",
     icon: Palette
   }
