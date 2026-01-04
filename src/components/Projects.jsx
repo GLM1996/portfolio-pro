@@ -126,6 +126,33 @@ const projects = [
     status: "Demo",
     gradient: "from-emerald-500/20 to-teal-500/20",
     icon: Palette
+  },
+  {
+    "title": "Spotify Clone",
+    "description": "Plataforma de Música Online",
+    "longDescription": "Sistema completo para reproducir música en streaming con catálogo organizado por álbumes, artistas y géneros musicales.",
+    "tech": [
+      {
+        name: "React.js",
+        icon: Cpu,
+        color: "bg-gray-800/30 text-gray-300"
+      },
+      {
+        name: "JavaScript",
+        icon: Sparkles,
+        color: "bg-yellow-500/20 text-yellow-400"
+      },
+      {
+        name: "Tailwind CSS",
+        icon: Layers,
+        color: "bg-cyan-500/20 text-cyan-300"
+      },
+    ],
+    demo: "https://spotify-clone-gl.vercel.app/",
+    repo: "#",
+    status: "En Vivo",
+    gradient: "from-purple-600/20 to-blue-600/20",
+    icon: Palette
   }
 ];
 
