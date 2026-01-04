@@ -153,6 +153,34 @@ const projects = [
     status: "En Vivo",
     gradient: "from-purple-600/20 to-blue-600/20",
     icon: Palette
+  },
+  {
+    "title": "Netflix Clone | Plataforma de Streaming Full-Stack",
+    "description": "Clon funcional de Netflix con sistema de reproducción, catálogo dinámico y autenticación de usuarios.",
+    "longDescription": "Plataforma de streaming completa desarrollada con React y Node.js que replica las funcionalidades principales de Netflix. Incluye sistema de autenticación, catálogo dinámico de películas/series, reproductor de video, perfiles de usuario, listas personalizadas y diseño responsive. Ideal para demostrar habilidades en desarrollo full-stack y UI/UX.",
+
+    "tech": [
+      {
+        name: "React.js",
+        icon: Cpu,
+        color: "bg-gray-800/30 text-gray-300"
+      },
+      {
+        name: "JavaScript",
+        icon: Sparkles,
+        color: "bg-yellow-500/20 text-yellow-400"
+      },
+      {
+        name: "Tailwind CSS",
+        icon: Layers,
+        color: "bg-cyan-500/20 text-cyan-300"
+      },
+    ],
+    demo: "https://netflix-clone-gl.vercel.app/",
+    repo: "#",
+    status: "En Vivo",
+    gradient: "from-purple-600/20 to-blue-600/20",
+    icon: Palette
   }
 ];
 
