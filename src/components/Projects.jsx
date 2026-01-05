@@ -95,38 +95,7 @@ const projects = [
     gradient: "from-emerald-500/20 to-teal-500/20",
     icon: Palette
   },
-  {
-    title: "Tienda Online - Dalygus",
-    description: "E-commerce para venta de equipos electrónicos",
-    longDescription: "Sistema de tienda online con integración a WhatsApp para gestión de pedidos y atención al cliente, diseñado para expandir presencia digital y optimizar ventas.",
-    tech: [
-      {
-        name: "React.js",
-        icon: Cpu,
-        color: "bg-gray-800/30 text-gray-300"
-      },
-      {
-        name: "JavaScript",
-        icon: Sparkles,
-        color: "bg-yellow-500/20 text-yellow-400"
-      },
-      {
-        name: "Tailwind CSS",
-        icon: Layers,
-        color: "bg-cyan-500/20 text-cyan-300"
-      },
-      {
-        name: "Supabase",
-        icon: Database,
-        color: "bg-green-500/20 text-green-300"
-      }
-    ],
-    demo: "https://tiendadalygus.vercel.app/",
-    repo: "#",
-    status: "Demo",
-    gradient: "from-emerald-500/20 to-teal-500/20",
-    icon: Palette
-  },
+  
   {
     "title": "Spotify Clone",
     "description": "Plataforma de Música Online",
@@ -176,7 +145,7 @@ const projects = [
         color: "bg-cyan-500/20 text-cyan-300"
       },
     ],
-    demo: "https://netflix-clone-gl.vercel.app/",
+    demo: "",
     repo: "#",
     status: "En Vivo",
     gradient: "from-purple-600/20 to-blue-600/20",
